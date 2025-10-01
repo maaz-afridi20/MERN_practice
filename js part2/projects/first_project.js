@@ -116,5 +116,15 @@ inp.addEventListener("input", function () {
   // uss ko clear kar do matlab agar ye ham aisa na karein tu ye aisa karega k
   // jo pahlay k kisi nay print kiyee hongay tu ye un ko b inp.value mein jo ayengay tu
   // ye un ko b add karta rahega tu result humein nahi milta rahega.
-  showUsers(newUsers);
+
+  if (newUsers.length === 0) {
+    let msg = document.createElement("h1");
+    msg.textContent = "nothing found";
+    msg.style.color = "white";
+    msg.style.fontSize = "20";
+    msg.classList.add("not-found");
+    document.querySelector(".cards").appendChild(msg);
+  } else {
+    showUsers(newUsers);
+  }
 });
