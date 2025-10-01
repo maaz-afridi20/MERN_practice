@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Bar Example</title>
+    <link rel="stylesheet" href="3_downloadprogress_eg.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Downloading...</h2>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">
+          <span id="progress-text">0%</span>
+        </div>
+      </div>
+
+      <button onclick="startProgress()">Start Download</button>
+    </div>
+    <br />
+    <!--  -->
+    <!-- alert banner -->
+    <div class="alert">
+      <span class="alert-text">⚠️ This is an alert message!</span>
+    </div>
+
+    <script type="module" src="3_downloadprogress_eg.js"></script>
+  </body>
+</html>
+
+<!-- <span class="close-btn" onclick="this.parentElement.style.display='none';"
+        >&times;</span
+      > -->

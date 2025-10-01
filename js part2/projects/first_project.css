@@ -1,0 +1,63 @@
+body {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #eee;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.search-box {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  background: #222;
+  color: #ccc;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* ✅ allows wrapping */
+  gap: 20px; /* ✅ spacing between cards */
+}
+
+.card {
+  position: relative;
+  width: 250px;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blurred-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+  z-index: 2;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
