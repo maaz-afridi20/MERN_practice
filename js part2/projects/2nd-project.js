@@ -3,20 +3,20 @@
 let addNote = document.querySelector("#add-note");
 let formContainer = document.querySelector(".form-container");
 let closeForm = document.querySelector(".closeForm");
-let taske = [];
+let tasks = [];
 
 const form = document.querySelector("form");
 const imageUrlInput = form.querySelector(
   "input[placeholder='https://example.com/photo.jpg']"
 );
 const fullNameInput = form.querySelector(
-  "input[placeholder='Enter full name']"
+  "input[placeholder='Enter Full Name']"
 );
 const homeTownInput = form.querySelector(
   "input[placeholder='Enter home town']"
 );
 const purposeInput = form.querySelector(
-  "input[placeholder='Enter purpose of note']"
+  "input[placeholder='eg. Quick appointment etc']"
 );
 const categoryRadios = form.querySelectorAll("input[name='category']");
 const submitBtn = document.querySelector(".submit-btn");
@@ -30,7 +30,7 @@ const submitBtn = document.querySelector(".submit-btn");
 
 function saveToLocalStorage(obj) {
   // sab say  pahlay check karo k kuch hai ya nai local storage mein
-  if (localStorage.getItem("tasks") === "") {
+  if (localStorage.getItem("tasks") === "" || []) {
     let oldTasks = [];
     oldTasks.push(obj);
     //JSON.stringify(oldTasks); // say ye string mein convert ho jaye ga.
@@ -73,10 +73,10 @@ closeForm.addEventListener("click", function () {
 
 form.addEventListener("submit", function (evt) {
   evt.preventDefault();
-  const imageUrl = imageUrlInput.value.trimp();
-  const fullName = fullNameInput.value.trimp();
-  const homeTown = homeTownInput.value.trimp();
-  const purpose = purposeInput.value.trimp();
+  const imageUrl = imageUrlInput.value.trim();
+  const fullName = fullNameInput.value.trim();
+  const homeTown = homeTownInput.value.trim();
+  const purpose = purposeInput.value.trim();
   //trimp ka hm nay iss liye use kiya hai k kabi kabar
   // koi log siraf spaces hi de detay hain jo k ham nai chahtay
   // tu ye trimp jo hai sari empty spaces ko hata deta hai.
@@ -138,7 +138,7 @@ yahan par humaray uss function ko likh lengay jo ooper likha hai saveToLocalStor
     fullName,
     homeTown,
     purpose,
-    selectOrNot,
+    categorySelected,
   });
   // tu ham nay ye sara data bhej diya jo k save karana hai.
 });
