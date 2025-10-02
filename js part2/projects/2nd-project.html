@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="2nd-project.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>New Call</h2>
+      <form>
+        <label>Image Url</label>
+        <input
+          required
+          type="text"
+          placeholder="https://example.com/photo.jpg"
+        />
+
+        <label>Full Name</label>
+        <input required type="text" placeholder="Enter Full Name" />
+
+        <label>Home Town</label>
+        <input required type="text" placeholder="Enter home town" />
+
+        <label>Purpose</label>
+        <input required type="text" placeholder="eg. Quick appointment etc" />
+
+        <label>Category</label>
+        <label class="tag-checkbox">
+          <input required type="radio" name="category" value="emergency" />
+          <span>Emergency</span>
+        </label>
+
+        <label class="tag-checkbox">
+          <input required type="radio" name="category" value="important" />
+          <span>Important</span>
+        </label>
+
+        <label class="tag-checkbox">
+          <input required type="radio" name="category" value="urgent" />
+          <span>Urgent</span>
+        </label>
+
+        <label class="tag-checkbox">
+          <input required type="radio" name="category" value="no rush" />
+          <span>No Rush</span>
+        </label>
+        <!-- submit btn -->
+        <button class="submit-btn">Create Note</button>
+      </form>
+      <button class="closeForm">Close</button>
+    </div>
+
+    <!--  -->
+    <!-- Note Container  -->
+    <div class="note-container">
+      <div class="left-icons">
+        <button id="add-note"><i class="ri-add-line"></i></button>
+        <button id="upBtn"><i class="ri-arrow-up-line"></i></button>
+        <button id="downBtn"><i class="ri-arrow-down-line"></i></button>
+      </div>
+    </div>
+
+    <!--  -->
+    <!-- stack container -->
+    <div class="stack">
+      <div class="card"></div>
+    </div>
+
+    <script type="module" src="2nd-project.js"></script>
+  </body>
+</html>
