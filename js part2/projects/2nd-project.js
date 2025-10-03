@@ -28,38 +28,59 @@ const submitBtn = document.querySelector(".submit-btn");
 // code start here.
 //
 
+// function saveToLocalStorage(obj) {
+//   // sab say  pahlay check karo k kuch hai ya nai local storage mein
+//   let oldTasks = localStorage.getItem("tasks");
+//   if (oldTasks === null) {
+//     oldTasks = [];
+//     // oldTasks.push(obj);
+//     //JSON.stringify(oldTasks); // say ye string mein convert ho jaye ga.
+//     // localStorage.setItem("tasks", JSON.stringify(oldTasks));
+//   } else {
+//     // ye else ham nay lagaya hai k agar matlab pahlay say local storage
+//     // empay naii huaa tu ye wala step chalay ga.
+//     // let oldTasks = localStorage.getItem("tasks");
+//     oldTasks = JSON.parse(oldTasks);
+//   }
+//   oldTasks.push(obj); // ye ab new wala object ko add kar lega old tasks mein
+//   localStorage.setItem("tasks", JSON.stringify(oldTasks));
+
+//   /*
+//   tu ye basically kia karega wo ye k jab ham kuch cheez local storage mein save karna chahein
+//   tu ye pahlay dhekega k uss name say tu kuch save nai hai pahlay say local storage mein
+//   tu agar null hain matlab kuch b tasks nai hain tu ye aik array banaye ga oldTasks k name say
+//   uss mein jo b obj hm add karengay wo uss mein add krta jaye ga
+//   us k baad jo b tasks aye hongay wo hm stringify kar k local storage mein put kar dengay
+
+//   agar wo null nai aya matlab pahlay say tasks hain tu ham nay pahlay un tasks ko nikala
+//   uss ko json.parse kr k string say bahir nikaal kr uss ko wapis original array form
+//   mein kr diya
+//   uss k baad ham nay push kiyaa humara jo b object huaa yani k obj uss actual array mein
+//   uss k baad ham nay local storage mein tasks ko set kiaa or wo wo unhe tasks ka
+//   stringify version hain yani k ham nay string mein kr diya siraf un ko.
+//   */
+// }
+//
+
 function saveToLocalStorage(obj) {
-  // sab say  pahlay check karo k kuch hai ya nai local storage mein
-  if (localStorage.getItem("tasks") === "" || []) {
-    let oldTasks = [];
-    oldTasks.push(obj);
-    //JSON.stringify(oldTasks); // say ye string mein convert ho jaye ga.
-    localStorage.setItem("tasks", JSON.stringify(oldTasks));
+  // Get existing tasks from localStorage
+  let oldTasks = localStorage.getItem("tasks");
+
+  if (oldTasks === null) {
+    // If no tasks exist, create a new array
+    oldTasks = [];
   } else {
-    // ye else ham nay lagaya hai k agar matlab pahlay say local storage
-    // empay naii huaa tu ye wala step chalay ga.
-    let oldTasks = localStorage.getItem("tasks");
+    // If tasks exist, parse them from JSON string to array
     oldTasks = JSON.parse(oldTasks);
-    oldTasks.push(obj); // ye ab new wala object ko add kar lega old tasks mein
-    localStorage.setItem("tasks", JSON.stringify(oldTasks));
   }
 
-  /*
-  tu ye basically kia karega wo ye k jab ham kuch cheez local storage mein save karna chahein
-  tu ye pahlay dhekega k uss name say tu kuch save nai hai pahlay say local storage mein
-  tu agar null hain matlab kuch b tasks nai hain tu ye aik array banaye ga oldTasks k name say
-  uss mein jo b obj hm add karengay wo uss mein add krta jaye ga
-  us k baad jo b tasks aye hongay wo hm stringify kar k local storage mein put kar dengay
-  
-  agar wo null nai aya matlab pahlay say tasks hain tu ham nay pahlay un tasks ko nikala
-  uss ko json.parse kr k string say bahir nikaal kr uss ko wapis original array form 
-  mein kr diya
-  uss k baad ham nay push kiyaa humara jo b object huaa yani k obj uss actual array mein 
-  uss k baad ham nay local storage mein tasks ko set kiaa or wo wo unhe tasks ka 
-  stringify version hain yani k ham nay string mein kr diya siraf un ko.
-  */
+  // Add the new object to the array
+  oldTasks.push(obj);
+
+  // Save the updated array back to localStorage
+  localStorage.setItem("tasks", JSON.stringify(oldTasks));
 }
-//
+
 addNote.addEventListener("click", function () {
   formContainer.style.display = "initial";
   // ye ham nay iss liye kiyaa hai k agar hm plus walay button pr click karein
@@ -127,12 +148,11 @@ form.addEventListener("submit", function (evt) {
   //
   // this will only run if all validation passes successfully
   alert("Form submitted successfully");
-  form.reset();
 
   //
   /*   tu bass humein yahan prr ab local storage mein save krwana hai tu ham 
-yahan par humaray uss function ko likh lengay jo ooper likha hai saveToLocalStorage k name say
-*/
+  yahan par humaray uss function ko likh lengay jo ooper likha hai saveToLocalStorage k name say
+  */
   saveToLocalStorage({
     imageUrl,
     fullName,
@@ -141,4 +161,8 @@ yahan par humaray uss function ko likh lengay jo ooper likha hai saveToLocalStor
     categorySelected,
   });
   // tu ham nay ye sara data bhej diya jo k save karana hai.
+  //
+  //
+  form.reset();
+  formContainer.style.display = "none";
 });
