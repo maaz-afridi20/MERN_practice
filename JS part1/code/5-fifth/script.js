@@ -67,7 +67,7 @@ for (let i = 1; i < 21; i++) {
   console.log(i);
 
   if (i === 11) {
-    break; // ye loop 32 tuk chalega orr 11 prr ruk jaye ga
+    break; // ye loop 11 tuk chalega orr 11 prr ruk jaye ga
     // qk hm nay break lagaya hai...
   }
 }
