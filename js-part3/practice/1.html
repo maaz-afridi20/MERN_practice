@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prac</title>
+  </head>
+  <body>
+    <form
+      class="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-8 mb-12 w-full max-w-lg"
+      autocomplete="off"
+    >
+      <h2
+        class="text-3xl font-bold mb-6 text-center text-blue-700 tracking-tight"
+      >
+        Add User
+      </h2>
+      <div class="mb-5">
+        <label class="block text-gray-700 font-medium mb-2" for="name"
+          >Name</label
+        >
+        <input
+          class="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none"
+          type="text"
+          name="name"
+          id="name"
+          required
+        />
+      </div>
+      <div class="mb-5">
+        <label class="block text-gray-700 font-medium mb-2" for="role"
+          >Role</label
+        >
+        <input
+          class="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none"
+          type="text"
+          id="role"
+          name="role"
+        />
+      </div>
+      <div class="mb-5">
+        <label
+          class="w-full px-4 py-2 border border-blue-200 rounded-lg"
+          for="bio"
+          >Bio</label
+        >
+        <textarea
+          class="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none"
+          name="bio"
+          id="bio"
+          rows="3"
+          required
+        ></textarea>
+      </div>
+      <div class="mb-7">
+        <label class="block text-gray-700 font-medium mb-2" for="photo"
+          >Photo</label
+        >
+        <input
+          class="w-full px-4 py-2 border border-blue-200 rounded-lg focus:outline-none"
+          type="url"
+          id="photo"
+          name="photo"
+          required
+        />
+      </div>
+    </form>
+    <!--  -->
+    <!--  -->
+
+    <div
+      class="users grid grid-cols-1 md:grid-cols-3 gap-10 px-6 max-w-6xl mx-auto"
+    >
+      <!-- user card 1 -->
+    </div>
+    <script type="module" src="1.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Applying Tailwind Css</title>
+  </head>
+  <body>
+    <!-- <ul class="bg-black text-white flex [&>*]:text-green-300 ">
+      <li class="m-3">
+        <a class="p-3 hover:bg-blue-900" href="#">Home</a>
+      </li>
+      <li class="m-3">
+        <a class="p-3 hover:bg-gray-500" href="#">News</a>
+      </li>
+      <li class="m-3">
+        <a class="p-3 hover:bg-yellow-300" href="#">Contact</a>
+      </li>
+      <li class="m-3"><a class="p-3 hover:bg-green-100" href="#">About</a></li>
+    </ul> -->
+
+    <ul
+      class="flex bg-black text-white p-3 [&>*]:hover:bg-gray-500 [&>*]:border [&>*]:px-5 [&>*]:rounded [&>*]:mx-4"
+    >
+      <!-- ham ye [&>*] tab use krtay hain jab humein kisi cheez k saray childs ko select krna ho
+   jaisay k ham nay ul k saray childs ko accept krwa liya iss say phir ham jo b property ho de sktay hain 
+   -->
+      <li class="">
+        <a class="" href="#">Home</a>
+      </li>
+      <li class="">
+        <a class="" href="#">News</a>
+      </li>
+      <li class="border">
+        <a class="" href="#">Contact</a>
+      </li>
+      <li class=""><a class="" href="#">About</a></li>
+    </ul>
+  </body>
+</html>
+
+<!-- <style>
+      body {
+        margin: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #000;
+        display: flex;
+        list-style-type: none;
+      }
+      li a {
+        display: block;
+        color: white;
+        padding: 14px;
+        text-decoration: none;
+      }
+      li a:hover {
+        background-color: #222;
+      }
+    </style> -->

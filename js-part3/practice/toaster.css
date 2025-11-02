@@ -1,0 +1,46 @@
+.toaster {
+  position: fixed;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  font-family: sans-serif;
+  transition: opacity 0.3s ease;
+  opacity: 0.95;
+  z-index: 1000;
+}
+
+/* Themes */
+.toaster.dark {
+  background-color: #222;
+  color: white;
+}
+
+.toaster.light {
+  background-color: #f1f1f1;
+  color: #222;
+}
+
+/* Horizontal positions */
+.toaster.left {
+  left: 20px;
+}
+
+.toaster.right {
+  right: 20px;
+}
+
+/* Vertical positions */
+.toaster.top {
+  top: 20px;
+}
+
+.toaster.bottom {
+  bottom: 20px;
+}
+
+.parent {
+  background-color: yellow;
+  height: 500px;
+  width: 500px;
+}
